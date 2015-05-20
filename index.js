@@ -4,6 +4,7 @@ var tessel = require('tessel');
 
 var Camera = require('./lib/CameraModule');
 var Ambient = require('./lib/AmbientModule');
+var Accelerometer = require('./lib/AccelerometerModule');
 
 var camera = new Camera('A', {
   compression: 0.2,
@@ -11,6 +12,8 @@ var camera = new Camera('A', {
 });
 
 var ambient = new Ambient('B');
+
+var accelerometer = new Accelerometer('C');
 
 // var accelerometer = require('accel-mma84').use(tessel.port.C);
 // var climate = require('climate-si7020').use(tessel.port.D);
@@ -23,8 +26,9 @@ var notificationLED = tessel.led[1].output(0);
 //  }).catch(console.error.bind(console.error));
 //});
 
-ambient.on('ready', function () {
+accelerometer.on('ready', function () {
   notificationLED.output(1);
+  accelerometer.getNativeModule().on('data', console.log.bind(console.log));
 });
 //
 // ambient.on('error', console.error.bind(console.error));
