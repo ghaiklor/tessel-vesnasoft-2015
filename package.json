@@ -6,10 +6,11 @@
   "main": "index.js",
   "author": "ghaiklor",
   "scripts": {
-    "start": "tessel run index.js",
-    "build": "tessel push index.js"
+    "start": "tessel run index.js --upload-dir ./uploads",
+    "build": "tessel push index.js --upload-dir ./uploads"
   },
   "dependencies": {
+    "ambient-attx4": "^0.2.5",
     "camera-vc0706": "^0.1.8"
   }
 }
