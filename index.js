@@ -2,10 +2,10 @@
 
 var tessel = require('tessel');
 
-var Camera = require('./lib/CameraModule');
-var Ambient = require('./lib/AmbientModule');
-var Accelerometer = require('./lib/AccelerometerModule');
-var ClimateModule = require('./lib/ClimateModule');
+var Camera = require('./lib/modules/CameraModule');
+var Ambient = require('./lib/modules/AmbientModule');
+var Accelerometer = require('./lib/modules/AccelerometerModule');
+var ClimateModule = require('./lib/modules/ClimateModule');
 
 var camera = new Camera('A', {
   compression: 0.2,
