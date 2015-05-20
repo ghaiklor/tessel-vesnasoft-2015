@@ -7,8 +7,8 @@ Tessel application for posting images to Instagram by a clap.
 ```shell
 git clone https://github.com/ghaiklor/tessel-vesnasoft-2015.git
 cd tessel-vesnasoft-2015
-tessel run index.js # for dev flow
-tessel push index.js # for prod flow
+npm start # for dev flow
+npm build # for prod flow
 ```
 
 ## License
