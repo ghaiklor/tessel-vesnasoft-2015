@@ -1,0 +1,12 @@
+{
+  "name": "tessel-vesnasoft-2015",
+  "version": "0.1.0",
+  "description": "Tessel application for posting images to Instagram by a clap",
+  "license": "MIT",
+  "main": "index.js",
+  "author": "ghaiklor",
+  "scripts": {
+    "start": "tessel run index.js",
+    "build": "tessel push index.js"
+  }
+}
