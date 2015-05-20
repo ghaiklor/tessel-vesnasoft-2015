@@ -8,5 +8,8 @@
   "scripts": {
     "start": "tessel run index.js",
     "build": "tessel push index.js"
+  },
+  "dependencies": {
+    "camera-vc0706": "^0.1.8"
   }
 }
