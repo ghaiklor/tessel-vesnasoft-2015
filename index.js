@@ -25,7 +25,6 @@ var notificationLED = tessel.led[1].output(0);
 
 ambient.on('ready', function () {
   notificationLED.output(1);
-  ambient.getNativeModule().on('light', console.log.bind(console.log));
 });
 //
 // ambient.on('error', console.error.bind(console.error));
