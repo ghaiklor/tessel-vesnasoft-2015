@@ -3,8 +3,7 @@
 var tessel = require('tessel');
 
 var Camera = require('./lib/Camera');
-var camera = new Camera({
-  port: 'A',
+var camera = new Camera('A', {
   compression: 0.2,
   resolution: 'vga'
 });
@@ -14,9 +13,9 @@ var camera = new Camera({
 // var climate = require('climate-si7020').use(tessel.port.D);
 
 var notificationLED = tessel.led[1].output(0);
-camera.on('ready', function() {
+camera.on('ready', function () {
   notificationLED.output(1);
-  camera.takePicture().then(function(image) {
+  camera.takePicture().then(function (image) {
     process.sendfile(Date.now() + '.jpg', image);
   }).catch(console.error.bind(console.error));
 });
