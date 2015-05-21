@@ -11,7 +11,7 @@ var led = new LEDModule();
  */
 function _onModulesReady(modules) {
   led.startAnimation();
-  modules.Servo.turnAround(1);
+  modules.Servo.startRotating(1);
   //modules.Accelerometer.getNativeModule().on('data', server.send.bind(server));
 }
 
