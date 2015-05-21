@@ -14,6 +14,7 @@
     "ambient-attx4": "^0.2.5",
     "camera-vc0706": "^0.1.8",
     "climate-si7020": "^0.1.1",
+    "nodejs-websocket": "^1.2.1",
     "q": "^1.4.1"
   }
 }

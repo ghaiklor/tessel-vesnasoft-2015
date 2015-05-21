@@ -1,9 +1,11 @@
 /**
  * Wrappers for tessel modules
  */
-var ModuleLoader = require('./lib/ModuleLoader');
 var LEDModule = require('./lib/modules/LEDModule');
+var ModuleLoader = require('./lib/ModuleLoader');
+var WebSocketServer = require('./lib/WebSocketServer');
 var led = new LEDModule().startAnimation();
+var server = new WebSocketServer(3000);
 
 /**
  * Triggers when all modules is ready to work
@@ -11,7 +13,7 @@ var led = new LEDModule().startAnimation();
  * @private
  */
 function _onModulesReady(modules) {
-  modules.Accelerometer.getNativeModule().on('data', console.log.bind(console.log));
+  modules.Accelerometer.getNativeModule().on('data', server.send.bind(server));
   setTimeout(led.stopAnimation.bind(led), 2000);
 }
 
