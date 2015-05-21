@@ -2,7 +2,7 @@ var LEDModule = require('./lib/modules/LEDModule');
 var ModuleLoader = require('./lib/ModuleLoader');
 var WebSocketServer = require('./lib/WebSocketServer');
 var led = new LEDModule();
-var server = new WebSocketServer(3000);
+//var server = new WebSocketServer(3000);
 
 /**
  * Triggers when all modules is ready to work
@@ -11,12 +11,10 @@ var server = new WebSocketServer(3000);
  */
 function _onModulesReady(modules) {
   led.startAnimation();
-  modules.Accelerometer.getNativeModule().on('data', server.send.bind(server));
+  modules.Servo.turnAround(1);
+  //modules.Accelerometer.getNativeModule().on('data', server.send.bind(server));
 }
 
 new ModuleLoader({
-  Accelerometer: 'C'
-  //Ambient: 'B',
-  //Camera: 'A',
-  //Climate: 'D'
+  Servo: 'A'
 }).on('ready', _onModulesReady);
