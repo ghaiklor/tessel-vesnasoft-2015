@@ -37,7 +37,7 @@ function _onModulesReady(modules) {
   modules.Accelerometer.getNativeModule().on('data', _onAccelerometerData);
   modules.Ambient.onClapTrigger(_onClapTrigger);
 
-  led.on('LED2');
+  led.startAnimation();
 }
 
 new ModuleLoader({
