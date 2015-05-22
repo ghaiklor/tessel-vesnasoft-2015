@@ -21,7 +21,7 @@ function _onAccelerometerData(data) {
  * @param data
  * @private
  */
-function _onAmbientSoundTrigger(data) {
+function _onClapTrigger(data) {
   server.send({
     type: 'restart',
     data: data
@@ -35,7 +35,7 @@ function _onAmbientSoundTrigger(data) {
  */
 function _onModulesReady(modules) {
   modules.Accelerometer.getNativeModule().on('data', _onAccelerometerData);
-  modules.Ambient.onSoundTrigger(0.2, 1000, _onAmbientSoundTrigger);
+  modules.Ambient.onClapTrigger(_onClapTrigger);
 
   led.on('LED2');
 }
