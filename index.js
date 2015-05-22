@@ -1,8 +1,19 @@
 var LEDModule = require('./lib/modules/LEDModule');
+var WiFiModule = require('./lib/modules/WiFiModule');
 var ModuleLoader = require('./lib/ModuleLoader');
 var WebSocketServer = require('./lib/WebSocketServer');
 var led = new LEDModule();
 var server = new WebSocketServer(3000);
+var wifi = new WiFiModule({
+  security: 'wpa2',
+  ssid: 'Claptrap',
+  password: 'hellowor',
+  timeout: 30
+});
+var moduleLoader = new ModuleLoader({
+  Accelerometer: 'A',
+  Ambient: 'C'
+});
 
 /**
  * Triggers when accelerometer data is received
@@ -17,7 +28,7 @@ function _onAccelerometerData(data) {
 }
 
 /**
- * Triggers when ambient sound level is triggered
+ * Triggers when clap sound is triggered
  * @param data
  * @private
  */
@@ -40,7 +51,5 @@ function _onModulesReady(modules) {
   led.startAnimation();
 }
 
-new ModuleLoader({
-  Accelerometer: 'A',
-  Ambient: 'C'
-}).on('ready', _onModulesReady);
+wifi.connect();
+moduleLoader.on('ready', _onModulesReady);
