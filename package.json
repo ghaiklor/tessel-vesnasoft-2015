@@ -1,7 +1,7 @@
 {
   "name": "tessel-vesnasoft-2015",
   "version": "0.1.0",
-  "description": "Tessel application for posting images to Instagram by a clap",
+  "description": "Tessel application for demonstrating accel, ambient, camera, climate, servo and leds",
   "license": "MIT",
   "main": "index.js",
   "author": "ghaiklor",

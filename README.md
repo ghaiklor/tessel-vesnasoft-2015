@@ -1,6 +1,6 @@
 # tessel-vesnasoft-2015
 
-Tessel application for posting images to Instagram by a clap.
+Tessel application for demonstrating accel, ambient, camera, climate, servo and leds.
 
 ## Getting Started
 
